@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de acceso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #2c3e50; /* Azul marino */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #34495e;
+            box-sizing: border-box;
+        }
+        .container {
+            display: none;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        .login-box {
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            position: relative;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 2px solid #7f8c8d;
+            font-size: 18px;
+            background-color: #ecf0f1;
+            color: #34495e;
+            transition: all 0.3s ease;
+        }
+        .login-box input:focus {
+            border: 2px solid #3498db;
+            background-color: #fff;
+            outline: none;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 18px;
+            background-color: #d5c4a1; /* Beige más claro */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .login-box button:hover {
+            background-color: #bba77f; /* Beige algo más oscuro */
+            transform: scale(1.05);
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 18px 35px;
+            margin: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 22px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #d5c4a1; /* Beige más claro, mismo color que el botón "Ingresar" */
+            color: white;
+        }
+        .button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="login-box" id="loginBox">
+    <input type="password" id="passwordInput" placeholder="Contraseña" />
+    <button class="button" onclick="checkPassword()">Ingresar</button>
+</div>
+
+<div class="container" id="container">
+    <div class="button-container">
+        <button class="button" onclick="openVocabulario()">Vocabulario</button>
+        <button class="button" onclick="openClips()">Clips</button>
+    </div>
+</div>
+
+<script>
+    const correctPassword = 'VUFCOD3';
+    
+    // Función para verificar la contraseña de ingreso inicial
+    function checkPassword() {
+        const password = document.getElementById('passwordInput').value;
+        if (password === correctPassword) {
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('container').style.display = 'block';
+        } else {
+            alert('Contraseña incorrecta');
+        }
+    }
+
+    // Función para abrir el enlace de vocabulario
+    function openVocabulario() {
+        window.open('https://docs.google.com/spreadsheets/d/1jfO0u9u7Pf_JZe9OGGsS9I3cAOer2NUVDE7cjk5X_z4/edit?gid=0#gid=0', '_blank');
+    }
+
+    // Función para abrir los clips (puedes personalizar este enlace)
+    function openClips() {
+        alert('Aquí se podrían agregar clips');
+    }
+</script>
+
+</body>
+</html>
